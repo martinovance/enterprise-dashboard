@@ -1,6 +1,6 @@
 import React from 'react'
 import { Avatar as AntdAvatar, AvatarProps } from 'antd';
-import { getNameInitials } from '../utils';
+import { getNameInitials } from "../utils";
 
 type Props = AvatarProps & {
   name?: string;

@@ -1,13 +1,13 @@
 import { CalendarOutlined } from '@ant-design/icons'
 import { Badge, Card, List } from 'antd'
-import React, { useState } from 'react'
 import { Text } from '../text'
 import UpcomingEventsSkeleton from '../skeleton/upcoming-events'
 import { getDate } from '../../utils/helpers'
 import { useList } from '@refinedev/core'
 import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from '../../graphql/queries'
-import dayjs from 'dayjs'
-const UpcomingEvents = () => {
+// import dayjs from 'dayjs'
+
+const UpcomingEvents = () => { 
   const { data, isLoading } = useList({
     resource: 'events',
     pagination: { pageSize: 8 },
@@ -75,7 +75,7 @@ const UpcomingEvents = () => {
               </List.Item>
             )
           }}
-        ></List>
+        />
       )}
       {!isLoading && data?.data.length === 0 && (
         <span

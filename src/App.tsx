@@ -1,3 +1,4 @@
+import React from 'react'
 import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
@@ -19,6 +20,9 @@ import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
+import List from "./pages/tasks/list";
+import TaskCreatePage from "./pages/tasks/create";
+import TaskEditPage from "./pages/tasks/edit";
 
 function App() {
   return (
@@ -63,6 +67,14 @@ function App() {
                         <Route index element={<CompanyList />} />
                         <Route path="new" element={<Create />} />
                         <Route path="edit/:id" element={<EditPage />} />
+                      </Route>
+                      <Route path="/tasks" element={
+                        <List>
+                          <Outlet />
+                        </List>
+                      }>
+                        <Route path="new" element={<TaskCreatePage />} />
+                        <Route path="edit/:id" element={<TaskEditPage />} />
                       </Route>
                   </Route>
                 </Routes>

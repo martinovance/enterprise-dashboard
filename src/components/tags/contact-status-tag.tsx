@@ -14,10 +14,7 @@ type Props = {
   status: ContactStatus;
 };
 
-/**
- * Renders a tag component representing the contact status.
- * @param status - The contact status.
- */
+
 export const ContactStatusTag = ({ status }: Props) => {
   let icon: React.ReactNode = null;
   let color: TagProps["color"] = undefined;
